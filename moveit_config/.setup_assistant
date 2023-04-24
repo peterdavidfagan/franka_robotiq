@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: franka_robotiq_setup
+    relative_path: description/urdf/robot.urdf.xacro
+  SRDF:
+    relative_path: config/panda.srdf.xacro
+  CONFIG:
+    author_name: Peter David Fagan
+    author_email: peterdavidfagan@gmail.com
+    generated_timestamp: 1636310680
