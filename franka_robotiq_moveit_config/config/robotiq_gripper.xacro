@@ -18,13 +18,15 @@
 	    <joint name="robotiq_85_left_finger_tip_joint" />
 	    <joint name="robotiq_85_right_finger_tip_joint" />
         </group>
-
-        <xacro:macro name="configure_robotiq_collisions" params="link enabled:=${[]}">
-            <!-- Disable collision checking between normal links, as these are handled by "sc" links -->	
+    
+	<xacro:property name="robotiq_links" value="${['base_link', 'left_knuckle_link', 'right_knuckle_link', 'left_finger_link', 'right_finger_link', 'left_inner_knuckle_link', 'right_inner_knuckle_link', 'left_finger_tip_link', 'right_finger_tip_link']}" />
+	<xacro:macro name="configure_robotiq_collisions" params="link enabled:=${[]}">
 	    <xacro:property name="panda_link_fmt" value="$(arg arm_id)_link{}" />
 	    <xacro:property name="robotiq_link_fmt" value="robotiq_85_{}" />
             <xacro:disable_collisions_for link="${robotiq_link_fmt.format(link)}" others="${[panda_link_fmt.format(i) for i in python.range(8)]}" />
-            <xacro:enable_collisions_for link="${robotiq_link_fmt.format(link)}" others="${[panda_link_fmt.format(i) for i in enabled]}" />
+	    <xacro:disable_collisions_for link="${robotiq_link_fmt.format(link)}" others="${[robotiq_link_fmt.format(l) for l in robotiq_links if l!=link]}" />
+	    <xacro:enable_collisions_for link="${robotiq_link_fmt.format(link)}" others="${[panda_link_fmt.format(i) for i in enabled]}" />
+
         </xacro:macro>
 
         <xacro:configure_robotiq_collisions link="base_link" enabled="${[0,1,2,3]}"/>

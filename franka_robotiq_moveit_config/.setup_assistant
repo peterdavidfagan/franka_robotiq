@@ -1,7 +1,7 @@
 moveit_setup_assistant_config:
   URDF:
-    package: franka_robotiq_setup
-    relative_path: description/urdf/robot.urdf.xacro
+    package: franka_robotiq_description
+    relative_path: urdf/robot.urdf.xacro
   SRDF:
     relative_path: config/panda.srdf.xacro
   CONFIG:

@@ -28,7 +28,7 @@
   <!-- RobotIQ Gripper Description -->
   <xacro:if value="$(arg robotiq_gripper)">
     <xacro:include filename="$(find robotiq_description)/urdf/robotiq_gripper_macro.urdf.xacro"/>
-    <xacro:robotiq_gripper name="RobotiqGripperHardwareInterface" prefix="" parent="$(arg arm_id)_link8" use_fake_hardware="$(arg use_fake_hardware)">
+    <xacro:robotiq_gripper name="RobotiqGripperHardwareInterface" prefix="" parent="$(arg arm_id)_link8" use_fake_hardware="$(arg use_fake_hardware)" fake_sensor_commands="$(arg fake_sensor_commands)">
 	<origin xyz="0 0 0" rpy="0 0 ${radians(0)}" />
     </xacro:robotiq_gripper>
     

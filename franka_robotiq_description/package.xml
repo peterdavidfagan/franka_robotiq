@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>franka_robotiq_description</name>
+  <description>Franka Panda Resources used for MoveIt</description>
+  <author email="peterdavidfagan@gmail.com">Peter David Fagan</author>
+  <maintainer email="peterdavidfagan@gmail.com">Peter David Fagan</maintainer>
+  <version>0.0.0</version>
+  <license>BSD</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <export>
+      <build_type>ament_cmake</build_type>
+  </export>
+</package>
