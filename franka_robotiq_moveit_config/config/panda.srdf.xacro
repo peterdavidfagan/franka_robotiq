@@ -6,14 +6,14 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
     <xacro:arg name="arm_id" default="panda" />
 
-    <xacro:include filename="$(find franka_robotiq_setup)/config/arm.xacro" />
+    <xacro:include filename="$(find franka_robotiq_moveit_config)/config/arm.xacro" />
     <!-- panda_arm group: eef frame aligned to robot's flanche -->
     <xacro:arm name="$(arg arm_id)_arm" tip_link="$(arg arm_id)_link8"/>
 
     <!--Add the hand if people request it-->
     <xacro:arg name="robotiq_gripper" default="true" />
     <xacro:if value="$(arg robotiq_gripper)">
-        <xacro:include filename="$(find franka_robotiq_setup)/config/robotiq_gripper.xacro" />
+        <xacro:include filename="$(find franka_robotiq_moveit_config)/config/robotiq_gripper.xacro" />
         <xacro:robotiq_gripper />
     </xacro:if>
 
