@@ -7,7 +7,7 @@ moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControll
 
 moveit_simple_controller_manager:
   controller_names:
-    - panda_arm_controller
+    - panda_jtc_controller
 
   panda_arm_controller:
     action_ns: follow_joint_trajectory
