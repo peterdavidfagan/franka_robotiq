@@ -33,7 +33,7 @@ panda_position_controller:
 panda_jtc_controller:
   ros__parameters:
     command_interfaces:
-      - position
+      - effort
     state_interfaces:
       - position
       - velocity
