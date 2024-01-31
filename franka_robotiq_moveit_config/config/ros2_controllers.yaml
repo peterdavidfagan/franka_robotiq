@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 1000  # Hz
+    update_rate: 100  # Hz
 
     panda_jtc_controller:
       type: joint_trajectory_controller/JointTrajectoryController
@@ -11,7 +11,7 @@ controller_manager:
 panda_jtc_controller:
   ros__parameters:
     command_interfaces:
-      - effort
+      - position
     state_interfaces:
       - position
       - velocity
