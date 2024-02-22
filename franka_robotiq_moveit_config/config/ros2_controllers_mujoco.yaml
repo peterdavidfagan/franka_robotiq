@@ -5,6 +5,9 @@ controller_manager:
     panda_jtc_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
+    robotiq_position_controller:
+      type: position_controllers/GripperActionController
+
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
@@ -23,12 +26,7 @@ panda_jtc_controller:
       - panda_joint5
       - panda_joint6
       - panda_joint7
-        #gains:
-        #panda_joint1: { p: 500., d: 1., i: 0., i_clamp: 1. }
-        #panda_joint2: { p: 500., d: 1., i: 0., i_clamp: 1. }
-        #panda_joint3: { p: 500., d: 1., i: 0., i_clamp: 1. }
-        #panda_joint4: { p: 500., d: 1., i: 0., i_clamp: 1. }
-        #panda_joint5: { p: 500., d: 1., i: 0., i_clamp: 1. }
-        #panda_joint6: { p: 500., d: 1., i: 0., i_clamp: 1. }
-        #panda_joint7: { p: 500., d: 1., i: 0., i_clamp: 1. }
 
+robotiq_position_controller:
+  ros__parameters:
+    joint: robotiq_85_left_knuckle_joint

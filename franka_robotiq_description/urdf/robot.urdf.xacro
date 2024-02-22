@@ -41,5 +41,8 @@
   <!-- Note: robotiq_gripper xacro contains ROS 2 control tags already -->     
   <xacro:include filename="$(find franka_description)/robots/panda/ros2_control/panda_arm.ros2_control.xacro"/>
   <xacro:panda_arm_ros2_control ns="$(arg arm_id)" robot_ip="$(arg robot_ip)" use_fake_hardware="$(arg use_fake_hardware)" fake_sensor_commands="$(arg fake_sensor_commands)"/>
-
+  <xacro:if value="$(arg robotiq_gripper)">
+    <xacro:include filename="$(find franka_description)/robots/panda/ros2_control/panda_robotiq.ros2_control.xacro"/>
+    <xacro:robotiq_ros2_control prefix="" name="" use_fake_hardware="$(arg use_fake_hardware)"/>
+  </xacro:if>
 </robot>
