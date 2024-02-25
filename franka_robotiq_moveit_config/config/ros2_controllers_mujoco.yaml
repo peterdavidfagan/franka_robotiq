@@ -30,3 +30,4 @@ panda_jtc_controller:
 robotiq_position_controller:
   ros__parameters:
     joint: robotiq_85_left_knuckle_joint
+    allow_stalling: True
